@@ -6,10 +6,13 @@ All notable changes to this project will be documented in this file.
 
 ### Added
 
-- Licence, Changelog and Readme files.
+- License, Changelog and Readme files.
+- Swagger Configuration.
 - Entities:
-  - User
-  - Country
+  - User (Model, Controller, DTO, Repository, Service)
+  - Country (Model)
+- Utils
+  - EntityDTOConverter Interface
 - Endpoints:
   - `POST /users`: Create a new user.
   - `GET /users`: Retrieve all users.
@@ -17,5 +20,6 @@ All notable changes to this project will be documented in this file.
 
 ### Database
 
-- Added Liquibase configurations and a changeset to pre-load the "Country" entity with initial values.
+- Liquibase configurations 
+- "Country" changeset to preload entity with initial values.
 
