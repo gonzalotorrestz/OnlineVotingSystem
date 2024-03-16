@@ -23,7 +23,7 @@ public class OpenAPIConfig {
 
         Info information = new Info()
                 .title("Online Voting System API")
-                .version("1.0")
+                .version("0.1.0")
                 .description("This API exposes endpoints to manage an Online Voting System.")
                 .contact(myContact);
         return new OpenAPI().info(information).servers(List.of(server));

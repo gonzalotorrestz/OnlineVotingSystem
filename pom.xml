@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>dev.gonzalotorrestz</groupId>
 	<artifactId>onlinevotingsystem</artifactId>
-	<version>0.0.4</version>
+	<version>0.1.0</version>
 	<name>Online Voting System API</name>
 	<description>RESTful API for an Online Voting System</description>
 	<properties>
@@ -29,7 +29,11 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
-
+		<dependency>
+			<groupId>org.passay</groupId>
+			<artifactId>passay</artifactId>
+			<version>1.6.4</version>
+		</dependency>
 		<dependency>
 			<groupId>com.h2database</groupId>
 			<artifactId>h2</artifactId>
@@ -71,6 +75,17 @@
 			<groupId>org.modelmapper</groupId>
 			<artifactId>modelmapper</artifactId>
 			<version>3.2.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-crypto</artifactId>
+			<version>6.2.2</version>
+		</dependency>
+		<dependency>
+			<groupId>org.jetbrains</groupId>
+			<artifactId>annotations</artifactId>
+			<version>RELEASE</version>
+			<scope>compile</scope>
 		</dependency>
 	</dependencies>
 

@@ -1,38 +1,46 @@
 package dev.gonzalotorrestz.onlinevotingsystem.model;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
+
+import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "users", schema = "ovsdb")
+@Table(name = "users", schema = "ovsdb", uniqueConstraints = {@UniqueConstraint(columnNames = {"email"})})
 public class User {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private long id;
-    @Column(name = "username", unique = true)
-    private String username;
+    @Column(name = "email", unique = true)
+    @Email
+    @NotBlank
+    private String email;
+    @Column(name = "password")
+    private String password;
     @Column(name = "firstName")
     private String firstName;
     @Column(name = "lastName")
     private String lastName;
-    @Column(name = "email", unique = true)
-    private String email;
     @ManyToOne
-    @JoinColumn(name= "countryId", referencedColumnName = "id")
+    @JoinColumn(name = "countryId", referencedColumnName = "id")
     private Country country;
-    @Column(name = "age")
-    private int age;
+    private boolean enabled;
+    private LocalDateTime registrationDate;
+    private LocalDateTime lastLoginDate;
 
     public User() {
     }
-    public User(String username, String email, String firstName, String lastName, Country country, int age) {
-        this.username = username;
+
+    public User(String email, String firstName, String lastName, String password, Country country, boolean enabled, LocalDateTime registrationDate) {
         this.email = email;
         this.firstName = firstName;
         this.lastName = lastName;
+        this.password = password;
         this.country = country;
-        this.age = age;
+        this.enabled = false;
+        this.registrationDate = registrationDate;
     }
 
     public String getFirstName() {
@@ -62,14 +70,6 @@ public class User {
         this.email = email;
     }
 
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
     public Country getCountry() {
         return country;
     }
@@ -78,11 +78,35 @@ public class User {
         this.country = country;
     }
 
-    public int getAge() {
-        return age;
+    public String getPassword() {
+        return password;
     }
 
-    public void setAge(int age) {
-        this.age = age;
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public boolean isEnabled() {
+        return enabled;
+    }
+
+    public void setEnabled(boolean enabled) {
+        this.enabled = enabled;
+    }
+
+    public LocalDateTime getRegistrationDate() {
+        return registrationDate;
+    }
+
+    public void setRegistrationDate(LocalDateTime registrationDate) {
+        this.registrationDate = registrationDate;
+    }
+
+    public LocalDateTime getLastLoginDate() {
+        return lastLoginDate;
+    }
+
+    public void setLastLoginDate(LocalDateTime lastLoginDate) {
+        this.lastLoginDate = lastLoginDate;
     }
 }

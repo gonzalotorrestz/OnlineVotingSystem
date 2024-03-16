@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.1.0] - 2024-03-16
+
+### Changed
+
+- Refactor "user creation" for "user registration". 
+- Modified User entity class:
+  - Removed "username" field.
+  - Add "password" field with encoding functionality and strength validation.
+  - Add "enabled" field. It sets to false by default.
+  - Add "registrationDate" (auto completes on successful user creation) and "lastLoginDate" fields.
+
 ## [0.0.4] - 2024-03-16
 
 ### Changed

@@ -1,5 +1,6 @@
 package dev.gonzalotorrestz.onlinevotingsystem.util;
 
+import dev.gonzalotorrestz.onlinevotingsystem.dto.RegisteredUserDTO;
 import dev.gonzalotorrestz.onlinevotingsystem.dto.UserDTO;
 import dev.gonzalotorrestz.onlinevotingsystem.model.User;
 import org.modelmapper.ModelMapper;
@@ -14,10 +15,16 @@ public class UserEntityDTOConverter implements EntityDTOConverter<User, UserDTO>
 
     @Autowired
     private ModelMapper modelMapper;
+
     @Override
     public UserDTO convertToDTO(User user) {
         return modelMapper.map(user, UserDTO.class);
     }
+
+    public RegisteredUserDTO convertToRegisteredUserDTO(User user) {
+        return modelMapper.map(user, RegisteredUserDTO.class);
+    }
+
     @Override
     public User convertToEntity(UserDTO userDTO) {
         return modelMapper.map(userDTO, User.class);

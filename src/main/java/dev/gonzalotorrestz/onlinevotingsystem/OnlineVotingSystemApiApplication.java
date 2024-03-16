@@ -11,12 +11,13 @@ import org.springframework.context.annotation.ComponentScan;
 
 public class OnlineVotingSystemApiApplication {
 
-	@Bean
-	public ModelMapper modelMapper() {
-		return new ModelMapper();
-	}
-	public static void main(String[] args) {
-		SpringApplication.run(OnlineVotingSystemApiApplication.class, args);
-	}
+    @Bean
+    public ModelMapper modelMapper() {
+        return new ModelMapper();
+    }
+
+    public static void main(String[] args) {
+        SpringApplication.run(OnlineVotingSystemApiApplication.class, args);
+    }
 
 }
