@@ -2,6 +2,11 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.0.4] - 2024-03-16
+
+### Changed
+
+- User creation validations added on UserController (on previous commit). Removed unnecessary variables and console logs.
 
 ## [0.0.3] - 2024-03-16
 

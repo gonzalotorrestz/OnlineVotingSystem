@@ -38,17 +38,15 @@ public class UserController {
     public ResponseEntity<ResponseDTO<?>> createUser(@RequestBody @Valid UserDTO userDTO) {
         ResponseDTO<?> response = new ResponseDTO<>();
         try {
-            UserDTO createdUserDTO = userService.createUser(userDTO);
+            userService.createUser(userDTO);
             response.setStatus(HttpStatus.CREATED.value());
             response.setMessage("User created!");
-//            response.setData(createdUserDTO);
             return ResponseEntity.status(HttpStatus.CREATED).body(response);
         } catch (DataIntegrityViolationException e) {
             response.setStatus(HttpStatus.CONFLICT.value());
             response.setMessage("User with the same email or username already exists");
             return ResponseEntity.status(HttpStatus.CONFLICT).body(response);
         } catch (Exception e){
-            System.out.println("An unexpected error occurred: " + e);
             response.setStatus(HttpStatus.INTERNAL_SERVER_ERROR.value());
             response.setMessage("An internal server error occurred");
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(response);
