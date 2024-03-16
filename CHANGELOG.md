@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.0.2] - 2024-03-16
+
+### Changed
+
+- Country entity parameters and getters/setters names (removed "country" from the names because it felt redundant).
+
 ## [0.0.1] - 2024-03-14
 
 ### Added

@@ -6,16 +6,17 @@ import jakarta.persistence.*;
 public class Country {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "countryId")
-    private long countryId;
-    @Column(name = "countryName")
-    private String countryName;
+    @Column(name = "id")
+    private long id;
 
-    public String getCountryName() {
-        return countryName;
+    @Column(name = "name")
+    private String name;
+
+    public String getName() {
+        return name;
     }
 
-    public void setCountryName(String countryName) {
-        this.countryName = countryName;
+    public void setName(String name) {
+        this.name = name;
     }
 }

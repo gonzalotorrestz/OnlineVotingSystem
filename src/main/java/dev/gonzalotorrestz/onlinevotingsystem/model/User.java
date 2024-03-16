@@ -9,26 +9,30 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    private long userId;
-    @Column(name = "username")
+    private long id;
+    @Column(name = "username", unique = true)
     private String username;
     @Column(name = "firstName")
     private String firstName;
     @Column(name = "lastName")
     private String lastName;
-    @Column(name = "email")
+    @Column(name = "email", unique = true)
     private String email;
     @ManyToOne
-    @JoinColumn(name= "countryId")
+    @JoinColumn(name= "countryId", referencedColumnName = "id")
     private Country country;
     @Column(name = "age")
     private int age;
 
     public User() {
     }
-    public User(String username, String email) {
+    public User(String username, String email, String firstName, String lastName, Country country, int age) {
         this.username = username;
         this.email = email;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.country = country;
+        this.age = age;
     }
 
     public String getFirstName() {

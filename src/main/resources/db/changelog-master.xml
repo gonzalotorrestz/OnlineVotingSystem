@@ -13,10 +13,10 @@
 
     <changeSet id="2" author="${authorName}">
         <createTable tableName="country">
-            <column name="countryId" type="BIGINT" autoIncrement="true">
+            <column name="id" type="BIGINT" autoIncrement="true">
                 <constraints primaryKey="true" primaryKeyName="PK_country" nullable="false"/>
             </column>
-            <column name="countryName" type="VARCHAR(255)">
+            <column name="name" type="VARCHAR(255)">
                 <constraints nullable="false"/>
             </column>
         </createTable>
@@ -24,13 +24,13 @@
 
     <changeSet id="3" author="${authorName}">
         <insert tableName="country">
-            <column name="countryName" value="Argentina"/>
+            <column name="name" value="Argentina"/>
         </insert>
     </changeSet>
 
     <changeSet id="4" author="${authorName}">
         <insert tableName="country">
-            <column name="countryName" value="Brasil"/>
+            <column name="name" value="Brasil"/>
         </insert>
     </changeSet>
 </databaseChangeLog>

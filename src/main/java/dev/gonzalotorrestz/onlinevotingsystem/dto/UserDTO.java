@@ -1,7 +1,10 @@
 package dev.gonzalotorrestz.onlinevotingsystem.dto;
 
+import dev.gonzalotorrestz.onlinevotingsystem.model.Country;
+import jakarta.persistence.Entity;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotEmpty;
 
 public class UserDTO {
     @NotBlank(message = "Username cannot be blank")
@@ -14,15 +17,21 @@ public class UserDTO {
     @Email(message = "Invalid email address")
     private String email;
 
+    private int age;
+
+    private Country country;
+
     public UserDTO() {
 
     }
 
-    public UserDTO(String username, String email, String firstName, String lastName) {
+    public UserDTO(String username, String email, String firstName, String lastName, int age, Country country) {
         this.username = username;
         this.email = email;
         this.firstName = firstName;
         this.lastName = lastName;
+        this.age = age;
+        this.country = country;
     }
 
     public String getUsername() {
@@ -57,4 +66,19 @@ public class UserDTO {
         this.email = email;
     }
 
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public Country getCountry() {
+        return country;
+    }
+
+    public void setCountry(Country country) {
+        this.country = country;
+    }
 }
