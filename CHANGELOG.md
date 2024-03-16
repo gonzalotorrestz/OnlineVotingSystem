@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+
+## [0.0.3] - 2024-03-16
+
+### Added
+
+- ResponseDTO to handle responses.
+
 ## [0.0.2] - 2024-03-16
 
 ### Changed
